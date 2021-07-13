@@ -20,6 +20,10 @@ const candies = [{
   description: 'Melts in your mouth, not in your hand',
   quantity: 4,
   imageUrl: 'https://images.heb.com/is/image/HEBGrocery/000121396'
+}, {
+  name: "Pocky",
+  description: "Is great, delicious",
+  quantity: 10
 }];
 
 const seed = async () => {

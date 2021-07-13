@@ -2,6 +2,8 @@
 
 const router = require('express').Router()
 
+const Candy = require("../db/models/Candy");
+
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
 // You can put all routes in this file HOWEVER,
@@ -13,6 +15,15 @@ const router = require('express').Router()
 //
 // And for your `/api/kittens` routes:
 // router.use('/kittens', require('./kittens'))
+
+router.get("/candies", async (req, res, next) => {
+  try {
+    const candyRows = await Candy.findAll();
+    res.json(candyRows);
+  } catch (errorThatHappened) {
+    next(errorThatHappened);
+  }
+});
 
 // If someone makes a request that starts with `/api`,
 // but you DON'T have a corresponding router, this piece of
