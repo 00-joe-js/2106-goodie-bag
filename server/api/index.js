@@ -19,7 +19,7 @@ const Candy = require("../db/models/Candy");
 router.get("/candies", async (req, res, next) => {
   try {
     const candyRows = await Candy.findAll();
-    res.json(candyRows);
+    res.json(candyRows); // res.json more specific res.send
   } catch (errorThatHappened) {
     next(errorThatHappened);
   }
